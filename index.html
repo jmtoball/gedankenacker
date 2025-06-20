@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, this is Max</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'/>
+    <link href='style.css' rel='stylesheet' type='text/css'/>
+    <script type="text/javascript">
+      function highlightSection() {
+        const offset = window.scrollX;
+        const backgrounds = document.body.querySelectorAll('body > .background');
+        const headlines = document.body.querySelectorAll('h1, h2');
+        const backgroundCount = backgrounds.length - 1;
+        const scrollRatio = offset/(document.body.scrollWidth-window.innerWidth);
+        const backgroundIdx = Math.round(scrollRatio * backgroundCount);
+        const className = backgrounds[backgroundIdx].className.replace('background', '').trim();
+        for (let i=0; i <= backgroundCount; i++) {
+          backgrounds[i].style.opacity = (i == backgroundIdx ? 0.2 : 0);
+          headlines[i].className = (i == backgroundIdx ? className : "");
+        }
+      }
+      window.onscroll = highlightSection;
+    </script>
+  </head>
+  <body>
+    <div class='background about'></div>
+    <div class='background projects-current'></div>
+    <div class='background projects-past'></div>
+    <div class='background profiles'></div>
+    <div id='contents'>
+      <div class='row'>
+        <div class='one wide column'>
+          <h1>hey, call me Max</h1>
+          <div class='background about'>
+            <div class='spacer about'>
+              <img id='map' src='img/map.svg'/>
+              <p>I'm Johannes <em>Max</em>imilian Toball and <span id='age'></span> years old</p>
+              <p class='continues'>Having been born and raised in <span class='birth'>Northern Bavaria</span></p>
+              <p class='continued'>and studying in <span class='uni'>Passau</span>, I'm now at home in <span class='home'>Berlin</span></p>
+              <p class='continues'>I work as Staff Engineer at <a href="https://www.contentful.com/">Contentful</a>,</p>
+              <p class='continued'>marking the height of my <span id='experience'></span> years in the industry.</p>
+              <p>In my freetime I live for music, keep active by doing Yoga and lifting weights,
+              cook & bake with passion and mix in many other interests in the spaces of language, technology and history.</p>
+            </div>
+          </div>
+        </div>
+        <div class='one wide column'>
+          <h2>active projects</h2>
+          <div class='background projects-current'>
+            <div class='spacer projects-current'>
+              <p class='continues bigger'><a href="https://github.com/jmtoball/a-giant-reset">A Giant Reset</a></p>
+              <p class='continued'>A one-off(?) blogging effort when I went for a hike between my Jobs at One Data and Contentful.</p>
+              <p class='continues bigger'>rockscape</p>
+              <p class='continued'>All the data of who played with whom when where, visualized. Yet to be published.</p>
+              <p class='continues bigger'><a href='https://github.com/jmtoball/human-date-parser'>human-date-parser</a></p>
+              <p class='continued'>helper-lib to parse human-produced dates. Available for node.js &amp; browsers.</p>
+              <p class='continues bigger'><a href='https://github.com/jmtoball/sortr'>sortr</a></p>
+              <p class='continued'>sort indented files like YAMLs.</p>
+              <p class='continues bigger'><a href='https://github.com/jmtoball/cli-confirm'>cli-confirm</a></p>
+              <p class='continued'>Confirm actions on the CLI for node scripts.</p>
+            </div>
+          </div>
+        </div>
+        <div class='one wide column'>
+          <h2>dead projects</h2>
+          <div class='background projects-past'>
+            <div class='spacer projects-past'>
+              <p class='continues bigger'>Inseln der Winde <span class='timeframe'>(2003-2008)</span></p>
+              <p class='continued'>Together with some other enthusiasts I founded this Ultima Online Freeshard and contributed to it with web- and map-designs, Python-scripting and hosting.</p>
+              <p class='continues bigger'><a href='https://www.php-fusion.co.uk'>PHP-Fusion</a>: Open-Source CMS <span class='timeframe'>(2004-2009)</span></p>
+              <p class='continued'>I supported the multi-national PHP-Fusion-team as a Designer, Developer, Dev-Team Lead and Management Team Member.</p>
+              <p class='continues bigger'>wtchr.io <span class='timeframe'>(2013-2014)</span></p>
+              <p class='continued'>The internet's all seeing eye, similar to what <a href="https://www.browse.ai/">Browse AI</a> does now.</p>
+              <p class='continues bigger'>Moniteam <span class='timeframe'>(2017-2019)</span></p>
+              <p class='continued'>Monitoring for team KPIs, not servers.</p>
+            </div>
+          </div>
+        </div>
+        <div class='one wide column'>
+          <h2>find me here</h2>
+          <div class='background profiles'>
+            <div class='spacer profiles'>
+              <p>Follow me on <a href='https://www.instagram.com/chinaskian_void/'>Instagram</a></p>
+              <p>Find my projects and open source contributions on <a href='https://github.com/jmtoball'>GitHub</a></p>
+              <p>Check out my professional profile on <a href='https://de.linkedin.com/in/jmtoball'>LinkedIn</a></p>
+              <p>See what I'm listening to right now on <a href='http://www.last.fm/user/Matonor'>last.fm</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      const ageContainer = document.getElementById('age');
+      const now = new Date().getTime()
+      const age = Math.floor((now - new Date(1988, 6, 23).getTime())/(3600*24*365.25*1000));
+      ageContainer['innerText' in ageContainer ? 'innerText' : 'textContent'] = age;
+      const experience = Math.floor((now - new Date(2012, 2, 15)) / (3600 * 24 * 365.25 * 1000));
+      const experienceContainer = document.getElementById('experience');
+      experienceContainer['innerText' in experienceContainer ? 'innerText' : 'textContent'] = experience;
+      highlightSection();
+    </script>
+  </body>
+</html>

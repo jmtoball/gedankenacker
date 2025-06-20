@@ -1,0 +1,158 @@
+html, body {
+  min-height: 100%;
+}
+body {
+  font-family: Amaranth;
+  padding-top: 2em;
+  font-size: 1.2em;
+  background-image: linear-gradient(#fff 0%, #666 100%);
+}
+body, body > .background, #contents {
+  width: 3200px;
+}
+h1, h2 {
+  color: rgb(128, 128, 128);
+  display: inline-block;
+  padding: 100px 25px 25px 25px;
+  font-size: 3.33rem;
+  transition: color 0.75s;
+}
+img {
+  width: 100%;
+  border: none;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+em {
+  font-weight: bold;
+}
+
+.column {
+  float: left;
+  white-space: normal;
+}
+.column.one.wide {
+  width: 25%;
+}
+.column.two.wide {
+  width: 50%;
+}
+
+.spacer {
+  padding: 25px;
+  white-space: normal;
+}
+
+.row {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bigger {
+  font-size: 125%;
+}
+
+#contents {
+  color: #f0f0f0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+#contents .background {
+  border: 1px solid black;
+  border-right: none;
+}
+#contents .spacer {
+  height: 500px;
+}
+#contents .column p {
+  padding: 5px 10px;
+  margin: 7.5px 0;
+  background-color: rgba(0,0,0,0.6);
+  float: left;
+  clear: left;
+  line-height: 27.5px;
+}
+#contents .column p.continues {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#contents .column p.continued {
+  padding-top: 0;
+  margin-top: 0;
+}
+#contents .column:first-child {
+  border-left: none;
+}
+
+#map {
+  float: right;
+  width: 190px;
+  opacity: 0.6;
+}
+.birth {
+  color: #d40000;
+}
+.uni {
+  color: #2c89a0;
+}
+.home {
+  color: #88aa00;
+}
+
+body > .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.75s;
+}
+
+.background {
+  background-size: cover;
+  background-position: 0 50%;
+}
+.background.about {
+  background-image: url(img/me.jpg);
+}
+.spacer.about {
+  background-color: rgba(128, 81, 75, 0.5);
+}
+h1.about {
+  color: rgb(128, 81, 75);
+}
+.background.projects-current {
+  background-image: url(img/workshop.jpg);
+}
+.spacer.projects-current {
+  background-color: rgba(128, 82, 35, 0.5);
+}
+h2.projects-current {
+  color: rgb(128, 82, 35);
+}
+.background.projects-past {
+  background-image: url(img/death.jpg);
+}
+.spacer.projects-past {
+  background-color: rgba(128, 80, 60, 0.5);
+}
+h2.projects-past {
+  color: rgb(128, 80, 60);
+}
+.background.profiles {
+  background-image: url(img/telescope.jpg);
+}
+.spacer.profiles {
+  background-color: rgba(111, 128, 128, 0.5);
+}
+h2.profiles {
+  color: rgb(111, 128, 128);
+}

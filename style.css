@@ -3,12 +3,9 @@ html, body {
 }
 body {
   font-family: Amaranth;
-  padding-top: 2em;
+  padding: 2em;
   font-size: 1.2em;
   background-image: linear-gradient(#fff 0%, #666 100%);
-}
-body, body > .background, #contents {
-  width: 3200px;
 }
 h1, h2 {
   color: rgb(128, 128, 128);
@@ -32,15 +29,15 @@ em {
   font-weight: bold;
 }
 
+.row {
+  display: flex;
+  flex-direction: column;
+}
 .column {
-  float: left;
+  width: 800px;
   white-space: normal;
-}
-.column.one.wide {
-  width: 25%;
-}
-.column.two.wide {
-  width: 50%;
+  z-index: 2;
+  align-self: center;
 }
 
 .spacer {
@@ -59,14 +56,12 @@ em {
 
 #contents {
   color: #f0f0f0;
-  position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
 }
 #contents .background {
   border: 1px solid black;
-  border-right: none;
 }
 #contents .spacer {
   height: 500px;
@@ -107,11 +102,13 @@ em {
 }
 
 body > .background {
-  position: absolute;
+  filter: blur(5px);
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 0;
-  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
   opacity: 0;
   transition: opacity 0.75s;
 }
@@ -154,5 +151,5 @@ h2.projects-past {
   background-color: rgba(111, 128, 128, 0.5);
 }
 h2.profiles {
-  color: rgb(111, 128, 128);
+  color: rgb(45, 58, 58);
 }

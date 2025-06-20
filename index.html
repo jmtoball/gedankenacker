@@ -8,11 +8,11 @@
     <link href='style.css' rel='stylesheet' type='text/css'/>
     <script type="text/javascript">
       function highlightSection() {
-        const offset = window.scrollX;
+        const offset = window.scrollY;
         const backgrounds = document.body.querySelectorAll('body > .background');
         const headlines = document.body.querySelectorAll('h1, h2');
         const backgroundCount = backgrounds.length - 1;
-        const scrollRatio = offset/(document.body.scrollWidth-window.innerWidth);
+        const scrollRatio = offset/(document.body.scrollHeight-window.innerHeight);
         const backgroundIdx = Math.round(scrollRatio * backgroundCount);
         const className = backgrounds[backgroundIdx].className.replace('background', '').trim();
         for (let i=0; i <= backgroundCount; i++) {
@@ -39,7 +39,9 @@
               <p class='continues'>Having been born and raised in <span class='birth'>Northern Bavaria</span></p>
               <p class='continued'>and studying in <span class='uni'>Passau</span>, I'm now at home in <span class='home'>Berlin</span></p>
               <p class='continues'>I work as Staff Engineer at <a href="https://www.contentful.com/">Contentful</a>,</p>
-              <p class='continued'>marking the height of my <span id='experience'></span> years in the industry.</p>
+              <p class='continued continues'>marking the height of my <span id='experience'></span> years in the industry,</p>
+              <p class='continued continues'>having worked with many technologies and all around the stack</p>
+              <p class='continued'>but never far from data (I like data).</p>
               <p>In my freetime I live for music, keep active by doing Yoga and lifting weights,
               cook & bake with passion and mix in many other interests in the spaces of language, technology and history.</p>
             </div>
@@ -49,8 +51,9 @@
           <h2>active projects</h2>
           <div class='background projects-current'>
             <div class='spacer projects-current'>
-              <p class='continues bigger'><a href="https://github.com/jmtoball/a-giant-reset">A Giant Reset</a></p>
-              <p class='continued'>A one-off(?) blogging effort when I went for a hike between my Jobs at One Data and Contentful.</p>
+              <p class='continues bigger'><a href="https://reset.gedankenacker.de">A Giant Reset</a></p>
+              <p class='continued'>A one-off(?) blogging effort when I went for a hike between my Jobs at One Data and Contentful.
+              <a href="https://github.com/jmtoball/a-giant-reset">See the code here</a> to watch me take my first steps with Contentful.</p>
               <p class='continues bigger'>rockscape</p>
               <p class='continued'>All the data of who played with whom when where, visualized. Yet to be published.</p>
               <p class='continues bigger'><a href='https://github.com/jmtoball/human-date-parser'>human-date-parser</a></p>
